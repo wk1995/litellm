@@ -176,6 +176,27 @@ const createTestProps = (userRole = "proxy_admin", userId = "user-1", isTeamAdmi
 };
 
 describe("AddModelForm", () => {
+  it("should not render null values in existing credential options", async () => {
+    const mockUseAuthorized = vi.mocked(await import("@/app/(dashboard)/hooks/useAuthorized"));
+    mockUseAuthorized.default.mockReturnValue(mockAuthorizedUser("proxy_admin", "user-1", true));
+    const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    try {
+      const props = createTestProps();
+
+      renderWithProviders(<AddModelForm {...props} />);
+
+      expect(await screen.findByText("Existing Credentials")).toBeInTheDocument();
+
+      const nullValueWarnings = consoleErrorSpy.mock.calls.filter(([message]) =>
+        String(message).includes("`value` in Select options should not be `null`"),
+      );
+      expect(nullValueWarnings).toHaveLength(0);
+    } finally {
+      consoleErrorSpy.mockRestore();
+    }
+  });
+
   it("should render", async () => {
     const mockUseAuthorized = vi.mocked(await import("@/app/(dashboard)/hooks/useAuthorized"));
     mockUseAuthorized.default.mockReturnValue(mockAuthorizedUser("proxy_admin", "user-1", true));
