@@ -216,7 +216,7 @@ export function ComparisonPanel({
                 // Prevent automatic closing - we control it manually
               }}
               placement="bottomRight"
-              destroyTooltipOnHide={false}
+              destroyOnHidden={false}
             >
               <button
                 onClick={(event) => {

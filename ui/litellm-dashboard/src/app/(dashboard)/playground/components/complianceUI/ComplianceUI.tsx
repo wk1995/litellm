@@ -1027,21 +1027,23 @@ export default function ComplianceUI({
                   );
                   return (
                     <div key={fw.name} className="rounded-lg overflow-hidden">
-                      <button
-                        type="button"
-                        onClick={() => toggleFramework(fw.name)}
-                        className="w-full flex items-center gap-2 px-3 py-2.5 text-left bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg border border-gray-200"
-                      >
-                        {isExpanded ? (
-                          <ChevronDown className="w-4 h-4 text-gray-400 shrink-0" />
-                        ) : (
-                          <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" />
-                        )}
-                        <CategoryIcon iconKey={fw.icon} className="w-4 h-4 text-gray-500 shrink-0" />
-                        <div className="flex-1 min-w-0">
-                          <span className="text-xs font-semibold text-gray-900">{fw.name}</span>
-                          <span className="text-[10px] text-gray-400 ml-1.5">{fwPromptCount} prompts</span>
-                        </div>
+                      <div className="w-full flex items-center gap-2 px-3 py-2.5 text-left bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg border border-gray-200">
+                        <button
+                          type="button"
+                          onClick={() => toggleFramework(fw.name)}
+                          className="flex items-center gap-2 flex-1 min-w-0 text-left"
+                        >
+                          {isExpanded ? (
+                            <ChevronDown className="w-4 h-4 text-gray-400 shrink-0" />
+                          ) : (
+                            <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" />
+                          )}
+                          <CategoryIcon iconKey={fw.icon} className="w-4 h-4 text-gray-500 shrink-0" />
+                          <div className="flex-1 min-w-0">
+                            <span className="text-xs font-semibold text-gray-900">{fw.name}</span>
+                            <span className="text-[10px] text-gray-400 ml-1.5">{fwPromptCount} prompts</span>
+                          </div>
+                        </button>
                         {fwSelectedCount > 0 && (
                           <span className="text-[10px] font-medium bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full">
                             {fwSelectedCount}
@@ -1057,7 +1059,7 @@ export default function ComplianceUI({
                         >
                           {fwSelectedCount === fwPromptCount ? "Clear" : "All"}
                         </button>
-                      </button>
+                      </div>
 
                       {isExpanded && (
                         <div className="ml-3 mt-1 space-y-0.5 border-l-2 border-gray-100 pl-3">

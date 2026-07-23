@@ -77,6 +77,21 @@ const mockProps = {
 };
 
 describe("ComparisonPanel", () => {
+  it("should not use deprecated popover tooltip props", () => {
+    const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    try {
+      render(<ComparisonPanel {...mockProps} />);
+
+      const deprecatedPopoverWarnings = consoleErrorSpy.mock.calls.filter(([message]) =>
+        String(message).includes("`destroyTooltipOnHide` is deprecated"),
+      );
+      expect(deprecatedPopoverWarnings).toHaveLength(0);
+    } finally {
+      consoleErrorSpy.mockRestore();
+    }
+  });
+
   it("should render", () => {
     const { getByTestId } = render(<ComparisonPanel {...mockProps} />);
     expect(getByTestId("unified-selector")).toBeInTheDocument();
