@@ -1,4 +1,4 @@
-<p align="center"><strong>简体中文</strong> | <a href="README_EN.md">English</a></p>
+<p align="center"><a href="README.md">简体中文</a> | <strong>English</strong></p>
 
 <h1 align="center">
         🚅 LiteLLM
@@ -6,7 +6,7 @@
     <p align="center">
         <p align="center">LiteLLM AI Gateway
         </p>
-        <p align="center">面向 100+ LLM 的开源 AI Gateway。支持自托管，面向企业生产环境，可用 OpenAI 格式调用任意 LLM。</p>
+        <p align="center">Open Source AI Gateway for 100+ LLMs. Self-hosted. Enterprise-ready. Call any LLM in OpenAI format.</p>
         <p align="center">
         <a href="https://render.com/deploy?repo=https://github.com/BerriAI/litellm" target="_blank" rel="nofollow"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height="40"></a>
         <a href="https://railway.com/deploy/RhvhdC?referralCode=7mRv9K&utm_medium=integration&utm_source=template&utm_campaign=generic"><img src="https://railway.com/button.svg" alt="Deploy on Railway" height="40"></a>
@@ -14,7 +14,7 @@
         <a href="https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2FBerriAI%2Flitellm&cloudshell_workspace=terraform%2Flitellm%2Fgcp%2Fexamples%2Fdefault&cloudshell_tutorial=TUTORIAL.md&cloudshell_image=gcr.io/ds-artifacts-cloudshell/deploystack_custom_image&shellonly=true" target="_blank" rel="nofollow"><img src="./.github/deploy-on-gcp.png" alt="Deploy on GCP" height="40"></a>
         </p>
     </p>
-<h4 align="center"><a href="https://docs.litellm.ai/docs/simple_proxy" target="_blank">LiteLLM Proxy Server (AI Gateway)</a> | <a href="https://docs.litellm.ai/docs/enterprise#hosted-litellm-proxy" target="_blank"> 托管 Proxy</a> | <a href="https://litellm.ai/enterprise"target="_blank">企业版</a> | <a href="https://www.litellm.ai/ai-gateway" target="_blank">官网</a></h4>
+<h4 align="center"><a href="https://docs.litellm.ai/docs/simple_proxy" target="_blank">LiteLLM Proxy Server (AI Gateway)</a> | <a href="https://docs.litellm.ai/docs/enterprise#hosted-litellm-proxy" target="_blank"> Hosted Proxy</a> | <a href="https://litellm.ai/enterprise"target="_blank">Enterprise Tier</a> | <a href="https://www.litellm.ai/ai-gateway" target="_blank">Website</a></h4>
 <h4 align="center">
     <a href="https://pypi.org/project/litellm/" target="_blank">
         <img src="https://img.shields.io/pypi/v/litellm.svg" alt="PyPI Version">
@@ -43,27 +43,27 @@
 
 ---
 
-## LiteLLM 是什么
+## What is LiteLLM
 
-LiteLLM 是一个开源 AI Gateway，提供统一接口，用 OpenAI 格式调用 100+ LLM 提供商，包括 OpenAI、Anthropic、Gemini、Bedrock、Azure 等。
+LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format.
 
-你可以把它作为 **Python SDK** 直接集成到代码中，也可以部署 **AI Gateway (Proxy Server)**，作为团队或组织的集中式服务。
+Use it as a **Python SDK** for direct library integration, or deploy the **AI Gateway (Proxy Server)** as a centralized service for your team or organization.
 
-[**查看 LiteLLM Proxy (LLM Gateway) 文档**](https://docs.litellm.ai/docs/simple_proxy) <br>
-[**查看支持的 LLM 提供商**](https://docs.litellm.ai/docs/providers)
+[**Jump to LiteLLM Proxy (LLM Gateway) Docs**](https://docs.litellm.ai/docs/simple_proxy) <br>
+[**Jump to Supported LLM Providers**](https://docs.litellm.ai/docs/providers)
 
 ---
 
-## 为什么选择 LiteLLM
+## Why LiteLLM
 
-跨提供商管理 LLM 调用很快会变复杂：每个模型都有不同的 SDK、鉴权方式、请求格式和错误类型。LiteLLM 会消除这些摩擦：
+Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction:
 
-- **统一 API**：用一个接口调用 100+ LLM，无需在不同提供商 SDK 之间切换
-- **兼容 OpenAI 格式**：切换提供商时无需重写代码
-- **生产可用的网关**：内置虚拟密钥、成本跟踪、护栏、负载均衡和管理后台
-- 在 1k RPS 下 **P95 延迟 8ms**（[基准测试](https://docs.litellm.ai/docs/benchmarks)）
+- **Unified API** — one interface for 100+ LLMs, no provider-specific SDK juggling
+- **Drop-in OpenAI compatibility** — swap providers without rewriting your code
+- **Production-ready gateway** — virtual keys, spend tracking, guardrails, load balancing, and an admin dashboard out of the box
+- **8ms P95 latency** at 1k RPS ([benchmarks](https://docs.litellm.ai/docs/benchmarks))
 
-### 开源采用者
+### OSS Adopters
 
 <table>
   <tr>
@@ -79,12 +79,12 @@ LiteLLM 是一个开源 AI Gateway，提供统一接口，用 OpenAI 格式调�
 
 ---
 
-## 功能
+## Features
 
 <details open>
-<summary><b>LLMs</b> - 调用 100+ LLM（Python SDK + AI Gateway）</summary>
+<summary><b>LLMs</b> - Call 100+ LLMs (Python SDK + AI Gateway)</summary>
 
-[**所有支持的端点**](https://docs.litellm.ai/docs/supported_endpoints) - `/chat/completions`、`/responses`、`/embeddings`、`/images`、`/audio`、`/batches`、`/rerank`、`/a2a`、`/messages` 等。
+[**All Supported Endpoints**](https://docs.litellm.ai/docs/supported_endpoints) - `/chat/completions`, `/responses`, `/embeddings`, `/images`, `/audio`, `/batches`, `/rerank`, `/a2a`, `/messages` and more.
 
 ### Python SDK
 
@@ -108,7 +108,7 @@ response = completion(model="anthropic/claude-sonnet-4-20250514", messages=[{"ro
 
 ### AI Gateway (Proxy Server)
 
-[**入门 - 端到端教程**](https://docs.litellm.ai/docs/proxy/docker_quick_start) - 设置虚拟密钥并发起第一次请求
+[**Getting Started - E2E Tutorial**](https://docs.litellm.ai/docs/proxy/docker_quick_start) - Setup virtual keys, make your first request
 
 ```shell
 uv tool install 'litellm[proxy]'
@@ -125,16 +125,16 @@ response = client.chat.completions.create(
 )
 ```
 
-[**文档：LLM 提供商**](https://docs.litellm.ai/docs/providers)
+[**Docs: LLM Providers**](https://docs.litellm.ai/docs/providers)
 
 </details>
 
 <details>
-<summary><b>Agents</b> - 调用 A2A Agents（Python SDK + AI Gateway）</summary>
+<summary><b>Agents</b> - Invoke A2A Agents (Python SDK + AI Gateway)</summary>
 
-[**支持的提供商**](https://docs.litellm.ai/docs/a2a#add-a2a-agents) - LangGraph、Vertex AI Agent Engine、Azure AI Foundry、Bedrock AgentCore、Pydantic AI
+[**Supported Providers**](https://docs.litellm.ai/docs/a2a#add-a2a-agents) - LangGraph, Vertex AI Agent Engine, Azure AI Foundry, Bedrock AgentCore, Pydantic AI
 
-### Python SDK - A2A 协议
+### Python SDK - A2A Protocol
 
 ```python
 from litellm.a2a_protocol import A2AClient
@@ -158,9 +158,9 @@ response = await client.send_message(request)
 
 ### AI Gateway (Proxy Server)
 
-**步骤 1.** [将 Agent 添加到 AI Gateway](https://docs.litellm.ai/docs/a2a#adding-your-agent)，并按 Agent 设置 `protocolVersion` 为 `1.0` 或 `0.3`
+**Step 1.** [Add your Agent to the AI Gateway](https://docs.litellm.ai/docs/a2a#adding-your-agent) — set `protocolVersion` to `1.0` or `0.3` per agent
 
-**步骤 2.** 通过 A2A SDK 调用 Agent（需要 `a2a-sdk>=1.1.0`）
+**Step 2.** Call Agent via A2A SDK (requires `a2a-sdk>=1.1.0`)
 
 ```python
 import httpx
@@ -195,12 +195,12 @@ async with httpx.AsyncClient(headers=headers, timeout=60.0) as http_client:
             print("".join(getattr(p, "text", "") or "" for p in populated[0][1].parts))
 ```
 
-[**文档：A2A Agent Gateway**](https://docs.litellm.ai/docs/a2a)
+[**Docs: A2A Agent Gateway**](https://docs.litellm.ai/docs/a2a)
 
 </details>
 
 <details>
-<summary><b>MCP Tools</b> - 将 MCP Server 连接到任意 LLM（Python SDK + AI Gateway）</summary>
+<summary><b>MCP Tools</b> - Connect MCP servers to any LLM (Python SDK + AI Gateway)</summary>
 
 ### Python SDK - MCP Bridge
 
@@ -229,9 +229,9 @@ async with stdio_client(server_params) as (read, write):
 
 ### AI Gateway - MCP Gateway
 
-**步骤 1.** [将 MCP Server 添加到 AI Gateway](https://docs.litellm.ai/docs/mcp#adding-your-mcp)
+**Step 1.** [Add your MCP Server to the AI Gateway](https://docs.litellm.ai/docs/mcp#adding-your-mcp)
 
-**步骤 2.** 通过 `/chat/completions` 调用 MCP tools
+**Step 2.** Call MCP tools via `/chat/completions`
 
 ```bash
 curl -X POST 'http://0.0.0.0:4000/v1/chat/completions' \
@@ -249,7 +249,7 @@ curl -X POST 'http://0.0.0.0:4000/v1/chat/completions' \
   }'
 ```
 
-### 与 Cursor IDE 一起使用
+### Use with Cursor IDE
 
 ```json
 {
@@ -264,13 +264,13 @@ curl -X POST 'http://0.0.0.0:4000/v1/chat/completions' \
 }
 ```
 
-[**文档：MCP Gateway**](https://docs.litellm.ai/docs/mcp)
+[**Docs: MCP Gateway**](https://docs.litellm.ai/docs/mcp)
 
 </details>
 
-### 支持的提供商（[官网支持模型列表](https://models.litellm.ai/) | [文档](https://docs.litellm.ai/docs/providers)）
+### Supported Providers ([Website Supported Models](https://models.litellm.ai/) | [Docs](https://docs.litellm.ai/docs/providers))
 
-| 提供商                                                                            | `/chat/completions` | `/messages` | `/responses` | `/embeddings` | `/image/generations` | `/audio/transcriptions` | `/audio/speech` | `/moderations` | `/batches` | `/rerank` |
+| Provider                                                                            | `/chat/completions` | `/messages` | `/responses` | `/embeddings` | `/image/generations` | `/audio/transcriptions` | `/audio/speech` | `/moderations` | `/batches` | `/rerank` |
 |-------------------------------------------------------------------------------------|---------------------|-------------|--------------|---------------|----------------------|-------------------------|-----------------|----------------|-----------|-----------|
 | [Abliteration (`abliteration`)](https://docs.litellm.ai/docs/providers/abliteration) | ✅ |  |  |  |  |  |  |  |  |  |
 | [AI/ML API (`aiml`)](https://docs.litellm.ai/docs/providers/aiml) | ✅ | ✅ | ✅ | ✅ | ✅ |  |  |  |  |  |
@@ -375,13 +375,13 @@ curl -X POST 'http://0.0.0.0:4000/v1/chat/completions' \
 | [xAI (`xai`)](https://docs.litellm.ai/docs/providers/xai) | ✅ | ✅ | ✅ |  |  |  |  |  |  |  |
 | [Xinference (`xinference`)](https://docs.litellm.ai/docs/providers/xinference) |  |  |  | ✅ |  |  |  |  |  |  |
 
-[**阅读文档**](https://docs.litellm.ai/docs/)
+[**Read the Docs**](https://docs.litellm.ai/docs/)
 
 ---
 
-## 快速开始
+## Get Started
 
-你可以通过 Proxy Server 或 Python SDK 使用 LiteLLM。两者都会提供统一接口来访问多个 LLM（100+ LLM）。请选择最符合你需求的方式：
+You can use LiteLLM through either the Proxy Server or Python SDK. Both give you a unified interface to access multiple LLMs (100+ LLMs). Choose the option that best fits your needs:
 
 <table style={{width: '100%', tableLayout: 'fixed'}}>
 <thead>
@@ -393,34 +393,34 @@ curl -X POST 'http://0.0.0.0:4000/v1/chat/completions' \
 </thead>
 <tbody>
 <tr>
-<td style={{width: '14%'}}><strong>使用场景</strong></td>
-<td style={{width: '43%'}}>作为访问多个 LLM 的集中式服务（LLM Gateway）</td>
-<td style={{width: '43%'}}>在 Python 代码中直接使用 LiteLLM</td>
+<td style={{width: '14%'}}><strong>Use Case</strong></td>
+<td style={{width: '43%'}}>Central service (LLM Gateway) to access multiple LLMs</td>
+<td style={{width: '43%'}}>Use LiteLLM directly in your Python code</td>
 </tr>
 <tr>
-<td style={{width: '14%'}}><strong>适用对象</strong></td>
-<td style={{width: '43%'}}>Gen AI Enablement / ML Platform 团队</td>
-<td style={{width: '43%'}}>构建 LLM 项目的开发者</td>
+<td style={{width: '14%'}}><strong>Who Uses It?</strong></td>
+<td style={{width: '43%'}}>Gen AI Enablement / ML Platform Teams</td>
+<td style={{width: '43%'}}>Developers building LLM projects</td>
 </tr>
 <tr>
-<td style={{width: '14%'}}><strong>核心能力</strong></td>
-<td style={{width: '43%'}}>集中式 API Gateway，支持认证与授权；按项目/用户进行多租户成本跟踪与预算管理；按项目自定义日志、护栏和缓存；用虚拟密钥实现安全访问控制；提供用于监控和管理的 Admin Dashboard UI</td>
-<td style={{width: '43%'}}>在代码库中直接集成 Python 库；通过 <a href="https://docs.litellm.ai/docs/routing">Router</a> 在多个部署（例如 Azure/OpenAI）之间进行重试和 fallback；应用级负载均衡与成本跟踪；使用兼容 OpenAI 的错误进行异常处理；支持可观测性回调（Lunary、MLflow、Langfuse 等）</td>
+<td style={{width: '14%'}}><strong>Key Features</strong></td>
+<td style={{width: '43%'}}>Centralized API gateway with authentication and authorization, multi-tenant cost tracking and spend management per project/user, per-project customization (logging, guardrails, caching), virtual keys for secure access control, admin dashboard UI for monitoring and management</td>
+<td style={{width: '43%'}}>Direct Python library integration in your codebase, Router with retry/fallback logic across multiple deployments (e.g. Azure/OpenAI) - <a href="https://docs.litellm.ai/docs/routing">Router</a>, application-level load balancing and cost tracking, exception handling with OpenAI-compatible errors, observability callbacks (Lunary, MLflow, Langfuse, etc.)</td>
 </tr>
 </tbody>
 </table>
 
-**稳定版本：** 使用带 `-stable` 标签的 Docker 镜像。这些镜像在发布前经过 12 小时负载测试。[在这里了解发布周期](https://docs.litellm.ai/docs/proxy/release_cycle)
+**Stable Release:** Use docker images with the `-stable` tag. These have undergone 12 hour load tests, before being published. [More information about the release cycle here](https://docs.litellm.ai/docs/proxy/release_cycle)
 
-我们会继续支持更多提供商。如果缺少某个提供商或 LLM 平台，请提交 [feature request](https://github.com/BerriAI/litellm/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFeature%5D%3A+)。
+Support for more providers. Missing a provider or LLM Platform, raise a [feature request](https://github.com/BerriAI/litellm/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFeature%5D%3A+).
 
-### 使用 Terraform 部署到 AWS 或 GCP
+### Deploy on AWS or GCP with Terraform
 
-使用已发布的 Terraform 模块，将 LiteLLM proxy 作为生产可用的组件化栈运行（gateway、backend、UI 分别部署为独立服务；使用托管 Postgres、Redis 和对象存储）。两个模块都发布在 [public Terraform Registry](https://registry.terraform.io/namespaces/BerriAI)，无需认证。
+Run the LiteLLM proxy as a production-ready componentized stack (gateway, backend, UI on separate services; managed Postgres + Redis + object store) using the published Terraform modules. Both modules are on the [public Terraform Registry](https://registry.terraform.io/namespaces/BerriAI) — no auth needed.
 
-#### AWS - ECS Fargate + Aurora + ElastiCache + ALB
+#### AWS — ECS Fargate + Aurora + ElastiCache + ALB
 
-[![Launch in AWS CloudShell](https://img.shields.io/badge/Launch-AWS_CloudShell-FF9900?logo=amazon-aws&logoColor=white)](https://console.aws.amazon.com/cloudshell/home) 会打开浏览器内 Shell，并使用你的 AWS 账号完成认证。进入后运行：
+[![Launch in AWS CloudShell](https://img.shields.io/badge/Launch-AWS_CloudShell-FF9900?logo=amazon-aws&logoColor=white)](https://console.aws.amazon.com/cloudshell/home) — opens an in-browser shell, already authenticated to your AWS account. Once inside, run:
 
 ```bash
 git clone https://github.com/BerriAI/litellm.git
@@ -429,9 +429,9 @@ cp terraform.tfvars.example terraform.tfvars   # edit region/tenant/env
 terraform init && terraform apply
 ```
 
-[模块页面 ->](https://registry.terraform.io/modules/BerriAI/litellm/aws/latest)
+[Module page →](https://registry.terraform.io/modules/BerriAI/litellm/aws/latest)
 
-也可以在你自己的根配置中调用该模块：
+Or call the module from your own root config:
 
 ```hcl
 # main.tf
@@ -471,17 +471,17 @@ terraform init
 terraform apply
 ```
 
-Provider API keys 保存在 AWS Secrets Manager 中；通过 `gateway_extra_secrets` 引用 ARN。完整输入列表和架构图见 [registry 页面](https://registry.terraform.io/modules/BerriAI/litellm/aws/latest?tab=inputs)。
+Provider API keys live in AWS Secrets Manager; reference ARNs via `gateway_extra_secrets`. Full input list and architecture diagram on the [registry page](https://registry.terraform.io/modules/BerriAI/litellm/aws/latest?tab=inputs).
 
-#### GCP - Cloud Run + Cloud SQL + Memorystore + HTTPS LB
+#### GCP — Cloud Run + Cloud SQL + Memorystore + HTTPS LB
 
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2FBerriAI%2Flitellm&cloudshell_workspace=terraform%2Flitellm%2Fgcp%2Fexamples%2Fdefault&cloudshell_tutorial=TUTORIAL.md&cloudshell_image=gcr.io/ds-artifacts-cloudshell/deploystack_custom_image&shellonly=true)
 
-真正的一键部署。它会打开 Cloud Shell、克隆此仓库，并通过内置 [DeployStack tutorial](./terraform/litellm/gcp/examples/default/TUTORIAL.md) 引导你执行 `terraform apply`：选择项目后，教程会创建 Artifact Registry 远程仓库，根据你的回答写入 `terraform.tfvars`，然后运行 apply。
+Real 1-click. Opens Cloud Shell, clones this repo, and walks you through `terraform apply` via a built-in [DeployStack tutorial](./terraform/litellm/gcp/examples/default/TUTORIAL.md) — pick the project, the tutorial sets up the Artifact Registry remote repo, writes `terraform.tfvars` from your answers, and runs apply.
 
-[模块页面 ->](https://registry.terraform.io/modules/BerriAI/litellm/google/latest)
+[Module page →](https://registry.terraform.io/modules/BerriAI/litellm/google/latest)
 
-如果要在你自己的配置中调用该模块，由于 Cloud Run 不能直接从 `ghcr.io` 拉取镜像，需要先一次性创建一个由 GHCR 支持的 Artifact Registry 远程仓库：
+To call the module from your own config instead, Cloud Run can't pull from `ghcr.io` directly, so first set up a one-time Artifact Registry remote repo backed by GHCR:
 
 ```bash
 gcloud artifacts repositories create litellm \
@@ -492,7 +492,7 @@ gcloud artifacts repositories create litellm \
   --project=my-gcp-project
 ```
 
-然后：
+Then:
 
 ```hcl
 # main.tf
@@ -535,39 +535,39 @@ terraform init
 terraform apply
 ```
 
-Provider API keys 保存在 Secret Manager 中；通过 `gateway_extra_secrets` 引用资源 ID（例如 `projects/my-gcp-project/secrets/openai-api-key`）。完整输入列表和架构图见 [registry 页面](https://registry.terraform.io/modules/BerriAI/litellm/google/latest?tab=inputs)。
+Provider API keys live in Secret Manager; reference resource IDs (e.g. `projects/my-gcp-project/secrets/openai-api-key`) via `gateway_extra_secrets`. Full input list and architecture diagram on the [registry page](https://registry.terraform.io/modules/BerriAI/litellm/google/latest?tab=inputs).
 
-#### 两个部署栈都包含
+#### Both stacks include
 
-- 完整的组件化拆分（gateway / backend / UI 作为独立服务）
-- 托管 Postgres（writer + reader）和 Redis
-- 用于 proxy 状态和文件上传的带版本对象存储
-- 在云厂商 secret manager 中自动生成 `LITELLM_MASTER_KEY`
-- 在 proxy 启动前运行 `prisma migrate deploy` 的一次性迁移任务
-- 与 [Helm chart](./helm/litellm/) 相同的 `proxy_config` 配置面；以 typed map 传入 YAML
+- The full componentized split (gateway / backend / UI as independent services)
+- Managed Postgres (writer + reader) and Redis
+- Versioned object store for proxy state + file uploads
+- An auto-generated `LITELLM_MASTER_KEY` in your cloud's secret manager
+- A one-off migration job that runs `prisma migrate deploy` before the proxy starts
+- The same `proxy_config` surface as the [Helm chart](./helm/litellm/) — pass YAML as a typed map
 
-Terraform 模块位于本仓库的 [`terraform/litellm/aws/`](./terraform/litellm/aws/) 和 [`terraform/litellm/gcp/`](./terraform/litellm/gcp/)；registry 条目是只读镜像，会随每次发布更新。
+The Terraform modules live at [`terraform/litellm/aws/`](./terraform/litellm/aws/) and [`terraform/litellm/gcp/`](./terraform/litellm/gcp/) in this repo; the registry entries are read-only mirrors updated on each release.
 
-### 以开发模式运行
-#### 服务
-1. 在根目录配置 `.env` 文件
-2. 启动依赖服务：`docker-compose up db prometheus`
+### Run in Developer Mode
+#### Services
+1. Setup .env file in root
+2. Run dependent services `docker-compose up db prometheus`
 
-#### 后端
+#### Backend
 1. Run `make bootstrap`
 2. Start proxy backend: `uv run python litellm/proxy/proxy_cli.py`
 
-#### 前端
-1. 进入 `ui/litellm-dashboard`（依赖已通过 `make bootstrap` 安装）
-2. 启动 dashboard：`npm run dev`
+#### Frontend
+1. Navigate to `ui/litellm-dashboard` (dependencies were already installed w/ `make bootstrap`)
+2. Start dashboard: `npm run dev`
 
-### 验证 Docker 镜像签名
+### Verify Docker Image Signatures
 
-所有发布到 GHCR 的 LiteLLM Docker 镜像都使用 [cosign](https://docs.sigstore.dev/cosign/overview/) 签名。每个版本都使用 [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0) 中引入的同一把密钥签名。
+All LiteLLM Docker images published to GHCR are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0).
 
-**使用固定 commit hash 验证（推荐）：**
+**Verify using the pinned commit hash (recommended):**
 
-commit hash 在密码学意义上不可变，因此这是确认你正在使用原始签名密钥的最强方式：
+A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key:
 
 ```bash
 cosign verify \
@@ -575,9 +575,9 @@ cosign verify \
   ghcr.io/berriai/litellm:<release-tag>
 ```
 
-**使用 release tag 验证（更方便）：**
+**Verify using a release tag (convenience):**
 
-本仓库中的 tag 受保护，并解析到同一把密钥。这个方式更易读，但依赖 tag 保护规则：
+Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules:
 
 ```bash
 cosign verify \
@@ -585,31 +585,31 @@ cosign verify \
   ghcr.io/berriai/litellm:<release-tag>
 ```
 
-将 `<release-tag>` 替换为你要部署的版本（例如 `v1.83.0-stable`）。
+Replace `<release-tag>` with the version you are deploying (e.g. `v1.83.0-stable`).
 
 ---
 
-# 企业版
-面向需要更高安全性、用户管理和专业支持的企业
+# Enterprise
+For companies that need better security, user management and professional support
 
-[获取企业版 License](https://litellm.ai/enterprise)
-[联系创始团队](https://enterprise.litellm.ai/demo)
+[Get an Enterprise License](https://litellm.ai/enterprise)
+[Talk to founders](https://enterprise.litellm.ai/demo)
 
-包含：
-- ✅ **[LiteLLM Commercial License](https://docs.litellm.ai/docs/proxy/enterprise) 下的功能：**
-- ✅ **功能优先级支持**
-- ✅ **自定义集成**
-- ✅ **专业支持：专属 Discord + Slack**
-- ✅ **自定义 SLA**
-- ✅ **通过单点登录实现安全访问**
+This covers:
+- ✅ **Features under the [LiteLLM Commercial License](https://docs.litellm.ai/docs/proxy/enterprise):**
+- ✅ **Feature Prioritization**
+- ✅ **Custom Integrations**
+- ✅ **Professional Support - Dedicated discord + slack**
+- ✅ **Custom SLAs**
+- ✅ **Secure access with Single Sign-On**
 
-# 贡献
+# Contributing
 
-欢迎为 LiteLLM 贡献代码。无论是修复 bug、添加功能还是改进文档，我们都感谢你的帮助。
+We welcome contributions to LiteLLM! Whether you're fixing bugs, adding features, or improving documentation, we appreciate your help.
 
-## 贡献者快速开始
+## Quick Start for Contributors
 
-需要先安装 uv。
+This requires uv to be installed.
 
 ```bash
 git clone https://github.com/BerriAI/litellm.git
@@ -621,33 +621,33 @@ make test-unit      # Run unit tests
 make format-check   # Check formatting only
 ```
 
-详细贡献指南请见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+For detailed contributing guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-> **贡献文档？** LiteLLM 文档已迁移到独立仓库：[BerriAI/litellm-docs](https://github.com/BerriAI/litellm-docs)。请在那里提交文档 PR。文档站点位于 [docs.litellm.ai](https://docs.litellm.ai)。
+> **📖 Contributing to documentation?** The LiteLLM docs have moved to a separate repository: [BerriAI/litellm-docs](https://github.com/BerriAI/litellm-docs). Please open doc PRs there. Docs are served at [docs.litellm.ai](https://docs.litellm.ai).
 
-## 代码质量 / Linting
+## Code Quality / Linting
 
-LiteLLM 遵循 [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)。
+LiteLLM follows the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html).
 
-自动化检查包括：
-- **Black**：代码格式化
-- **Ruff**：lint 和代码质量检查
-- **MyPy**：类型检查
-- **循环导入检测**
-- **导入安全检查**
-
-
-PR 合并前必须通过所有检查。
+Our automated checks include:
+- **Black** for code formatting
+- **Ruff** for linting and code quality
+- **MyPy** for type checking
+- **Circular import detection**
+- **Import safety checks**
 
 
-# 支持 / 联系创始团队
+All these checks must pass before your PR can be merged.
 
-- [预约 Demo](https://calendly.com/d/4mp-gd3-k5k/berriai-1-1-onboarding-litellm-hosted-version)
-- [社区 Discord](https://discord.gg/wuPM9dRgDw)
-- [社区 Slack](https://www.litellm.ai/support)
-- 邮箱：ishaan@berri.ai / krrish@berri.ai
 
-# 贡献者
+# Support / talk with founders
+
+- [Schedule Demo 👋](https://calendly.com/d/4mp-gd3-k5k/berriai-1-1-onboarding-litellm-hosted-version)
+- [Community Discord 💭](https://discord.gg/wuPM9dRgDw)
+- [Community Slack 💭](https://www.litellm.ai/support)
+- Our emails ✉️ ishaan@berri.ai / krrish@berri.ai
+
+# Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
